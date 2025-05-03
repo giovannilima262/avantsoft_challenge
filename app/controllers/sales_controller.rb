@@ -40,12 +40,12 @@ class SalesController < ApplicationController
     render json: SalesService.get_higher_volume
   end
 
-  api :GET, '/sales/higher/average', 'The clients with the highest sales volume'
+  api :GET, '/sales/higher/average', 'The clients with the highest sales average'
   def get_highest_average_amount_sale
     render json: SalesService.get_highest_average_amount
   end
 
-  api :GET, '/sales/higher/frequency', 'The clients with the highest sales volume'
+  api :GET, '/sales/higher/frequency', 'The clients with the highest sales frequency'
   def get_highest_frequency_sale
     render json: SalesService.get_highest_frequency
   end
