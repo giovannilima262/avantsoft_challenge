@@ -2,7 +2,7 @@ class SalesController < ApplicationController
   before_action :set_sale, only: [:update, :destroy]
 
   api :GET, '/sales', 'List all sales with optional filters by date'
-  param :date, String, desc: 'Filter by date', required: false
+  param :date, String, desc: 'Filter by date (ex: 2020-05-01)', required: false
   def index
     render json: SalesService.get_sales_by_date(params[:date])
   end
