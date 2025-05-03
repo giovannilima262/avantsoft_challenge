@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SalesService do
   include ActiveSupport::Testing::TimeHelpers
-  
+
   let!(:client1) { create(:client) }
   let!(:client2) { create(:client) }
   let!(:toy1) { create(:toy, value: 10.0) }

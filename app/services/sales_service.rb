@@ -1,5 +1,4 @@
 class SalesService
-
   def self.get_sales_by_date(date)
     if date.present?
       date = Time.zone.parse(date)
@@ -7,7 +6,7 @@ class SalesService
     else
       sales = Sale.all
     end
-    
+
     {
       count: sales.count,
       sum_toy_values: sales.map { |s| s.toy.value }.sum,
@@ -17,7 +16,7 @@ class SalesService
 
   def self.get_higher_volume
     client_id, total_sales = Sale.group(:client_id)
-                             .order(Arel.sql('COUNT(*) DESC'))
+                             .order(Arel.sql("COUNT(*) DESC"))
                              .count
                              .first
 
@@ -35,7 +34,7 @@ class SalesService
                           .group(:client_id)
                           .order(Arel.sql("avg_value DESC"))
                           .limit(1)
-                          .map { |s| [s.client_id, s.avg_value.to_f] }
+                          .map { |s| [ s.client_id, s.avg_value.to_f ] }
                           .first
 
     top_client = Client.find(client_id)
@@ -60,5 +59,4 @@ class SalesService
       client: top_client
     }
   end
-
 end

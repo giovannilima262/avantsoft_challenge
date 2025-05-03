@@ -3,5 +3,4 @@ class SaleSerializer < ActiveModel::Serializer
 
   belongs_to :client
   belongs_to :toy
-
 end

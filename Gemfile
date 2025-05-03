@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
 # Authorization
-gem 'cancancan'
-gem 'bcrypt', '~> 3.1.7'
-gem 'jwt'
-gem 'active_model_serializers'
+gem "cancancan"
+gem "bcrypt", "~> 3.1.7"
+gem "jwt"
+gem "active_model_serializers"
 # doc
-gem 'apipie-rails'
+gem "apipie-rails"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -50,8 +50,8 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem "rspec-rails"
+  gem "factory_bot_rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
@@ -66,4 +66,3 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
-

@@ -5,6 +5,6 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :password_digest, null: false
       t.boolean :admin, default: false
     end
-    User.create!(name: "admin", password: "admin", admin: true) # TODO 
+    User.create!(name: "admin", password: "admin", admin: true) # TODO
   end
 end

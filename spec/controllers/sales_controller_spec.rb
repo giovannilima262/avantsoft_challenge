@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe "SalesController", type: :request do
   let!(:user) { create(:user) }
   let!(:token) { User.generate_token(user) }
-  let!(:headers) { 
-    { 
-      'Authorization' => "Bearer #{token}", 
+  let!(:headers) {
+    {
+      'Authorization' => "Bearer #{token}",
       'Content-Type' => 'application/json'
-    } 
+    }
   }
 
   let!(:client) { create(:client) }
@@ -39,7 +39,6 @@ RSpec.describe "SalesController", type: :request do
         expect(body["toy"]["id"]).to eq(toy.id)
       end
     end
-
   end
 
   describe "PATCH /sales/:id" do
